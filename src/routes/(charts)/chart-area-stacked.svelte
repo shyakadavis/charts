@@ -62,7 +62,7 @@
 				<svelte:fragment slot="tooltip">
 					<Tooltip.Root let:data variant="none">
 						<ChartTooltip
-							tooltipLabel={format(data.date, PeriodType.Month)}
+							tooltipLabel={format(data.date, PeriodType.Month, { variant: 'long' })}
 							config={chartConfig}
 							payload={data}
 							indicator="dot"
