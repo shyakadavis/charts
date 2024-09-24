@@ -42,7 +42,7 @@
 					{ key: 'mobile', label: 'Mobile', color: chartConfig.mobile.color }
 				]}
 				seriesLayout="group"
-				props={{ xAxis: { format: (d) => d.slice(0, 3) } }}
+				props={{ xAxis: { format: (d) => d.slice(0, 3) }, bars: { stroke: 'none' } }}
 			>
 				<!-- TODO: How to specify that I don't want highlight lines that follow the cursor? -->
 				<!-- TODO: How to specify that I don't want yAxis ticks? -->
