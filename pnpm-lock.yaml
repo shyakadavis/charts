@@ -23,9 +23,12 @@ importers:
       d3-scale:
         specifier: ^4.0.2
         version: 4.0.2
+      d3-shape:
+        specifier: ^3.2.0
+        version: 3.2.0
       layerchart:
-        specifier: ^0.51.0
-        version: 0.51.0(svelte@4.2.19)(typescript@5.6.2)
+        specifier: ^0.51.1
+        version: 0.51.1(svelte@4.2.19)(typescript@5.6.2)
       tailwind-merge:
         specifier: ^2.5.2
         version: 2.5.2
@@ -60,6 +63,9 @@ importers:
       '@types/d3-scale':
         specifier: ^4.0.8
         version: 4.0.8
+      '@types/d3-shape':
+        specifier: ^3.1.6
+        version: 3.1.6
       '@types/eslint':
         specifier: ^9.6.0
         version: 9.6.1
@@ -703,8 +709,14 @@ packages:
   '@types/d3-array@3.2.1':
     resolution: {integrity: sha512-Y2Jn2idRrLzUfAKV2LyRImR+y4oa2AntrgID95SHJxuMUrkNXmanDSed71sRNZysveJVt1hLLemQZIady0FpEg==}
 
+  '@types/d3-path@3.1.0':
+    resolution: {integrity: sha512-P2dlU/q51fkOc/Gfl3Ul9kicV7l+ra934qBFXCFhrZMOL6du1TM0pm1ThYvENukyOn5h9v+yMJ9Fn5JK4QozrQ==}
+
   '@types/d3-scale@4.0.8':
     resolution: {integrity: sha512-gkK1VVTr5iNiYJ7vWDI+yUFFlszhNMtVeneJ6lUTKPjprsvLLI9/tgEGiXJOnlINJA8FyA88gfnQsHbybVZrYQ==}
+
+  '@types/d3-shape@3.1.6':
+    resolution: {integrity: sha512-5KKk5aKGu2I+O6SONMYSNflgiP0WfZIQvVUMan50wHsLG1G94JlxEVnCpQARfTtzytuY0p/9PXXZb3I7giofIA==}
 
   '@types/d3-time@3.0.3':
     resolution: {integrity: sha512-2p6olUZ4w3s+07q3Tm2dbiMZy5pCDfYwtLXXHUnVzXgQlZ/OyPtUz6OL382BkOuGlLXqfT+wqv8Fw2v8/0geBw==}
@@ -1427,8 +1439,8 @@ packages:
       svelte: 3 - 5 || >=5.0.0-next.120
       typescript: ^5.0.2
 
-  layerchart@0.51.0:
-    resolution: {integrity: sha512-SVUdraWlwWjbSRm2XNroo43jASF7aY/2flZicZKe+Z25GZkHthHf9URtKDaBF+4qpR9PMwDFPKUJODkvAze1Xw==}
+  layerchart@0.51.1:
+    resolution: {integrity: sha512-XaR4+j44bqtCX2DSXoNeMdtd0x+SX51O1UChFIUWB9rcUS/PtnqpIgHVWdMhmhUQvkExVuix7bHDf55jRBpvrA==}
     peerDependencies:
       svelte: ^3.56.0 || ^4.0.0 || ^5.0.0-next.120
 
@@ -2637,9 +2649,15 @@ snapshots:
 
   '@types/d3-array@3.2.1': {}
 
+  '@types/d3-path@3.1.0': {}
+
   '@types/d3-scale@4.0.8':
     dependencies:
       '@types/d3-time': 3.0.3
+
+  '@types/d3-shape@3.1.6':
+    dependencies:
+      '@types/d3-path': 3.1.0
 
   '@types/d3-time@3.0.3': {}
 
@@ -3399,7 +3417,7 @@ snapshots:
       svelte: 4.2.19
       typescript: 5.6.2
 
-  layerchart@0.51.0(svelte@4.2.19)(typescript@5.6.2):
+  layerchart@0.51.1(svelte@4.2.19)(typescript@5.6.2):
     dependencies:
       '@layerstack/svelte-actions': 0.0.4
       '@layerstack/svelte-stores': 0.0.4

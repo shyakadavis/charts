@@ -2,6 +2,7 @@
 	import * as Card from '$lib/components/ui/card';
 	import { ChartContainer, ChartTooltip, type ChartConfig } from '$lib/components/ui/chart';
 	import { scaleBand } from 'd3-scale';
+	import { curveNatural } from 'd3-shape';
 	import { AreaChart, Tooltip } from 'layerchart';
 	import TrendingUp from 'lucide-svelte/icons/trending-up';
 
@@ -24,6 +25,8 @@
 			color: 'hsl(var(--chart-2))'
 		}
 	} satisfies ChartConfig;
+
+	let tweened = true;
 </script>
 
 <Card.Root>
@@ -38,20 +41,30 @@
 				xScale={scaleBand()}
 				x="month"
 				series={[
-					{ key: 'mobile', label: 'Mobile', color: chartConfig.mobile.color },
-					{ key: 'desktop', label: 'Desktop', color: chartConfig.desktop.color }
+					{
+						key: 'mobile',
+						label: 'Mobile',
+						color: chartConfig.mobile.color,
+						props: { tweened }
+					},
+					{
+						key: 'desktop',
+						label: 'Desktop',
+						color: chartConfig.desktop.color,
+						props: { tweened }
+					}
 				]}
 				seriesLayout="stack"
-				props={{ xAxis: { format: (d) => d.slice(0, 3) } }}
+				props={{
+					area: { curve: curveNatural, 'fill-opacity': 0.4, line: { class: 'stroke-1' } },
+					xAxis: { format: (d) => d.slice(0, 3) },
+					yAxis: { format: () => '', tickLength: 0 }
+				}}
 				tooltip={{ mode: 'band' }}
 			>
-				<!-- TODO: Why is the upper-limit of the y-axis in the 500's? -->
-				<!-- TODO: How to render smooth-curve lines for the chart areas (type)? -->
-				<!-- TODO: How to specify that I don't want yAxis ticks? -->
-				<!-- TODO: How to specify stroke size for area chart? -->
+				<!-- TODO: Remove default padding/margin-x on the chart areas. -->
 				<svelte:fragment slot="tooltip">
-					<!-- TODO: Ask for a prop to unset/reset all Tooltip.Root default classes -->
-					<Tooltip.Root let:data>
+					<Tooltip.Root let:data variant="none">
 						<ChartTooltip
 							tooltipLabel={data.month}
 							config={chartConfig}
