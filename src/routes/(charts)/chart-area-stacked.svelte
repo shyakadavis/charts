@@ -44,19 +44,17 @@
 					{
 						key: 'mobile',
 						label: 'Mobile',
-						color: chartConfig.mobile.color,
-						props: { tweened }
+						color: chartConfig.mobile.color
 					},
 					{
 						key: 'desktop',
 						label: 'Desktop',
-						color: chartConfig.desktop.color,
-						props: { tweened }
+						color: chartConfig.desktop.color
 					}
 				]}
 				seriesLayout="stack"
 				props={{
-					area: { curve: curveNatural, 'fill-opacity': 0.4, line: { class: 'stroke-1' } },
+					area: { curve: curveNatural, 'fill-opacity': 0.4, line: { class: 'stroke-1' }, tweened },
 					xAxis: { format: (d) => d.slice(0, 3) },
 					yAxis: { format: () => '', tickLength: 0 }
 				}}
