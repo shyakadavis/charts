@@ -1,18 +1,18 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card';
 	import { ChartContainer, ChartTooltip, type ChartConfig } from '$lib/components/ui/chart';
-	import { scaleBand } from 'd3-scale';
+	import { format, PeriodType } from '@layerstack/utils';
 	import { curveNatural } from 'd3-shape';
 	import { AreaChart, Tooltip } from 'layerchart';
 	import TrendingUp from 'lucide-svelte/icons/trending-up';
 
 	const chartData = [
-		{ month: 'January', desktop: 186, mobile: 80 },
-		{ month: 'February', desktop: 305, mobile: 200 },
-		{ month: 'March', desktop: 237, mobile: 120 },
-		{ month: 'April', desktop: 73, mobile: 190 },
-		{ month: 'May', desktop: 209, mobile: 130 },
-		{ month: 'June', desktop: 214, mobile: 140 }
+		{ date: new Date('2024-01-01'), desktop: 186, mobile: 80 },
+		{ date: new Date('2024-02-01'), desktop: 305, mobile: 200 },
+		{ date: new Date('2024-03-01'), desktop: 237, mobile: 120 },
+		{ date: new Date('2024-04-01'), desktop: 73, mobile: 190 },
+		{ date: new Date('2024-05-01'), desktop: 209, mobile: 130 },
+		{ date: new Date('2024-06-01'), desktop: 214, mobile: 140 }
 	];
 
 	const chartConfig = {
@@ -38,8 +38,7 @@
 		<ChartContainer>
 			<AreaChart
 				data={chartData}
-				xScale={scaleBand()}
-				x="month"
+				x="date"
 				series={[
 					{
 						key: 'mobile',
@@ -55,16 +54,14 @@
 				seriesLayout="stack"
 				props={{
 					area: { curve: curveNatural, 'fill-opacity': 0.4, line: { class: 'stroke-1' }, tweened },
-					xAxis: { format: (d) => d.slice(0, 3) },
+					xAxis: { format: PeriodType.Month },
 					yAxis: { format: () => '', tickLength: 0 }
 				}}
-				tooltip={{ mode: 'band' }}
 			>
-				<!-- TODO: Remove default padding/margin-x on the chart areas. -->
 				<svelte:fragment slot="tooltip">
 					<Tooltip.Root let:data variant="none">
 						<ChartTooltip
-							tooltipLabel={data.month}
+							tooltipLabel={format(data.date, PeriodType.Month)}
 							config={chartConfig}
 							payload={data}
 							indicator="dot"
