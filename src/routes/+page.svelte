@@ -1,5 +1,18 @@
 <script lang="ts">
-	import { ChartAreaStacked, ChartBarMultiple, ChartPieDonutText } from './(charts)';
+	import { Separator } from '$lib/components/ui/separator';
+	import {
+		ChartAreaAxes,
+		ChartAreaDefault,
+		ChartAreaGradient,
+		ChartAreaIcons,
+		ChartAreaLegend,
+		ChartAreaLinear,
+		ChartAreaStacked,
+		ChartAreaStackedExpand,
+		ChartAreaStep,
+		ChartBarMultiple,
+		ChartPieDonutText
+	} from './(charts)';
 	import ChartDisplay from './(components)/chart-display.svelte';
 	import ChartsNav from './(components)/charts-nav.svelte';
 </script>
@@ -28,6 +41,39 @@
 				</ChartDisplay>
 				<ChartDisplay name="chart-pie-donut-text">
 					<ChartPieDonutText />
+				</ChartDisplay>
+			</div>
+			<Separator />
+			<div
+				id="area-chart"
+				class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+			>
+				<ChartDisplay name="chart-area-default">
+					<ChartAreaDefault />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-linear">
+					<ChartAreaLinear />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-step">
+					<ChartAreaStep />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-stacked">
+					<ChartAreaStacked />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-stacked-expand">
+					<ChartAreaStackedExpand />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-legend">
+					<ChartAreaLegend />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-icons">
+					<ChartAreaIcons />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-gradient">
+					<ChartAreaGradient />
+				</ChartDisplay>
+				<ChartDisplay name="chart-area-axes">
+					<ChartAreaAxes />
 				</ChartDisplay>
 			</div>
 		</div>
