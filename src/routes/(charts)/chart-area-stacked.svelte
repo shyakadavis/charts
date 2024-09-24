@@ -5,14 +5,15 @@
 	import { curveNatural } from 'd3-shape';
 	import { AreaChart, Tooltip } from 'layerchart';
 	import TrendingUp from 'lucide-svelte/icons/trending-up';
+	import { parseISO } from 'date-fns';
 
 	const chartData = [
-		{ date: new Date('2024-01-01'), desktop: 186, mobile: 80 },
-		{ date: new Date('2024-02-01'), desktop: 305, mobile: 200 },
-		{ date: new Date('2024-03-01'), desktop: 237, mobile: 120 },
-		{ date: new Date('2024-04-01'), desktop: 73, mobile: 190 },
-		{ date: new Date('2024-05-01'), desktop: 209, mobile: 130 },
-		{ date: new Date('2024-06-01'), desktop: 214, mobile: 140 }
+		{ date: parseISO('2024-01-01'), desktop: 186, mobile: 80 },
+		{ date: parseISO('2024-02-01'), desktop: 305, mobile: 200 },
+		{ date: parseISO('2024-03-01'), desktop: 237, mobile: 120 },
+		{ date: parseISO('2024-04-01'), desktop: 73, mobile: 190 },
+		{ date: parseISO('2024-05-01'), desktop: 209, mobile: 130 },
+		{ date: parseISO('2024-06-01'), desktop: 214, mobile: 140 }
 	];
 
 	const chartConfig = {
