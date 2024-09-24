@@ -27,8 +27,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       layerchart:
-        specifier: ^0.51.1
-        version: 0.51.1(svelte@4.2.19)(typescript@5.6.2)
+        specifier: ^0.51.2
+        version: 0.51.2(svelte@4.2.19)(typescript@5.6.2)
       tailwind-merge:
         specifier: ^2.5.2
         version: 2.5.2
@@ -1439,8 +1439,8 @@ packages:
       svelte: 3 - 5 || >=5.0.0-next.120
       typescript: ^5.0.2
 
-  layerchart@0.51.1:
-    resolution: {integrity: sha512-XaR4+j44bqtCX2DSXoNeMdtd0x+SX51O1UChFIUWB9rcUS/PtnqpIgHVWdMhmhUQvkExVuix7bHDf55jRBpvrA==}
+  layerchart@0.51.2:
+    resolution: {integrity: sha512-AC4j5vcOCCB9YNSdXcA2YHy6RjHQ6s2fmkXetEVD2jDGzFxVB5F5szJUBYYe6QZnd9MzIsASz/hEe4JiHUmu7w==}
     peerDependencies:
       svelte: ^3.56.0 || ^4.0.0 || ^5.0.0-next.120
 
@@ -3417,7 +3417,7 @@ snapshots:
       svelte: 4.2.19
       typescript: 5.6.2
 
-  layerchart@0.51.1(svelte@4.2.19)(typescript@5.6.2):
+  layerchart@0.51.2(svelte@4.2.19)(typescript@5.6.2):
     dependencies:
       '@layerstack/svelte-actions': 0.0.4
       '@layerstack/svelte-stores': 0.0.4

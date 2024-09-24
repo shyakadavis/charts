@@ -42,14 +42,16 @@
 					{ key: 'mobile', label: 'Mobile', color: chartConfig.mobile.color }
 				]}
 				seriesLayout="group"
-				props={{ xAxis: { format: (d) => d.slice(0, 3) }, bars: { stroke: 'none' } }}
+				props={{
+					bars: { stroke: 'none', inset: 5 },
+					highlight: { area: { fill: 'none' } },
+					xAxis: { format: (d) => d.slice(0, 3) },
+					yAxis: { format: () => '', tickLength: 0 }
+				}}
 			>
-				<!-- TODO: How to specify that I don't want highlight lines that follow the cursor? -->
-				<!-- TODO: How to specify that I don't want yAxis ticks? -->
-				<!-- TODO: How to specify some padding/gaps between bars? -->
+				<!-- TODO: How to add `tweened` to bars? -->
 				<svelte:fragment slot="tooltip">
-					<!-- TODO: Ask for a prop to unset/reset all Tooltip.Root default classes -->
-					<Tooltip.Root let:data>
+					<Tooltip.Root let:data variant="none">
 						<ChartTooltip
 							tooltipLabel={data.month}
 							config={chartConfig}
