@@ -46,7 +46,7 @@
 					bars: { stroke: 'none', inset: 5 },
 					highlight: { area: { fill: 'none' } },
 					xAxis: { format: (d) => d.slice(0, 3) },
-					yAxis: { format: () => '', tickLength: 0 }
+					yAxis: { format: () => '' }
 				}}
 			>
 				<!-- TODO: How to add `tweened` to bars? -->

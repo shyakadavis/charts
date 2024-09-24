@@ -47,7 +47,7 @@
 				props={{
 					area: { curve: curveNatural, 'fill-opacity': 0.4, line: { class: 'stroke-1' }, tweened },
 					xAxis: { format: PeriodType.Month },
-					yAxis: { format: () => '', tickLength: 0 }
+					yAxis: { format: () => '' }
 				}}
 			>
 				<svelte:fragment slot="tooltip">

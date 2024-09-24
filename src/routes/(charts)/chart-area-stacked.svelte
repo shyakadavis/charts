@@ -3,9 +3,9 @@
 	import { ChartContainer, ChartTooltip, type ChartConfig } from '$lib/components/ui/chart';
 	import { format, PeriodType } from '@layerstack/utils';
 	import { curveNatural } from 'd3-shape';
+	import { parseISO } from 'date-fns';
 	import { AreaChart, Tooltip } from 'layerchart';
 	import TrendingUp from 'lucide-svelte/icons/trending-up';
-	import { parseISO } from 'date-fns';
 
 	const chartData = [
 		{ date: parseISO('2024-01-01'), desktop: 186, mobile: 80 },
@@ -56,7 +56,7 @@
 				props={{
 					area: { curve: curveNatural, 'fill-opacity': 0.4, line: { class: 'stroke-1' }, tweened },
 					xAxis: { format: PeriodType.Month },
-					yAxis: { format: () => '', tickLength: 0 }
+					yAxis: { format: () => '' }
 				}}
 			>
 				<svelte:fragment slot="tooltip">

@@ -65,7 +65,7 @@
 							tooltipLabel={format(data.date, PeriodType.Month, { variant: 'long' })}
 							config={chartConfig}
 							payload={data}
-							indicator="line"
+							indicator="dot"
 						/>
 					</Tooltip.Root>
 				</svelte:fragment>
